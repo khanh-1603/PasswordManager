@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_surface">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_surface"
+        app:elevation="0dp">
+
+        <!-- Top Header Bar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="16dp"
+            app:title=""
+            app:navigationIcon="@null">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_shield"
+                    app:tint="@color/primary_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Vault Logic"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/ivUserProfile"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_account_circle"
+                    app:tint="@color/text_secondary" />
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSearch"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/outline_variant"
+                app:cardBackgroundColor="@color/surface_container_low">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/text_secondary" />
+
+                    <EditText
+                        android:id="@+id/edtSearchQuery"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:hint="Tìm kiếm mật khẩu..."
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:singleLine="true"
+                        android:imeOptions="actionSearch" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Horizontal Filter Chips -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupCategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Tất cả"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBanking"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngân hàng"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSocial"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mạng xã hội"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipEmail"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipWork"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Công việc"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipGaming"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trò chơi"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipShopping"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mua sắm"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipOther"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Khác"
+                        app:chipBackgroundColor="@color/chip_bg_state"
+                        android:textColor="@color/chip_text_state" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <!-- Main Content List -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRecentSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Tài khoản gần đây"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- RecyclerView Credentials List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCredentials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_credential" />
+
+            <!-- Giao diện hiển thị khi danh sách trống -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                android:padding="32dp">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_lock"
+                    android:alpha="0.5"
+                    android:contentDescription="Empty State" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Không tìm thấy tài khoản nào"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thử tìm từ khóa khác hoặc bấm nút + để thêm mới"
+                    android:textSize="13sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB Add Credential -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddCredential"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:contentDescription="Thêm mật khẩu mới"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/primary_blue"
+        app:tint="@color/on_primary"
+        app:fabCustomSize="56dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.VaultLogic.RoundedSquare" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

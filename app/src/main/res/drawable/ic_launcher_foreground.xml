@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Viền Khiên Ngọc Lục Bảo (Emerald Accent) -->
+    <path
+        android:fillColor="#86F898"
+        android:pathData="M54,26L32,36v15c0,13.88 9.42,26.85 22,30c12.58,-3.15 22,-16.12 22,-30V36L54,26z"/>
+    <!-- Thân Khiên Xanh Dương -->
+    <path
+        android:fillColor="#005BBF"
+        android:pathData="M54,29L35,37.6v13.4c0,12.21 8.12,23.63 19,26.4c10.88,-2.77 19,-14.19 19,-26.4V37.6L54,29z"/>
+    <!-- Quai Ổ Khóa -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,43c-3.31,0 -6,2.69 -6,6v3h12v-3c0,-3.31 -2.69,-6 -6,-6zm-3.5,6c0,-1.93 1.57,-3.5 3.5,-3.5s3.5,1.57 3.5,3.5v3h-7v-3z"/>
+    <!-- Thân Ổ Khóa -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,52h16c1.1,0 2,0.9 2,2v10c0,1.1 -0.9,2 -2,2H46c-1.1,0 -2,-0.9 -2,-2V54c0,-1.1 0.9,-2 2,-2z"/>
+    <!-- Lỗ Khóa -->
+    <path
+        android:fillColor="#005BBF"
+        android:pathData="M54,56c-1.1,0 -2,0.9 -2,2c0,0.74 0.4,1.38 1,1.72V62h2v-2.28c0.6,-0.34 1,-0.98 1,-1.72c0,-1.1 -0.9,-2 -2,-2z"/>
+</vector>

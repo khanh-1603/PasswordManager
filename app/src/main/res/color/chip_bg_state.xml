@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Khi chip được chọn: Dùng màu xanh dương nhạt primary_blue_container (#D8E2FF) -->
+    <item android:state_checked="true" android:color="@color/primary_blue_container" />
+    <item android:color="@color/surface_container_high" />
+</selector>

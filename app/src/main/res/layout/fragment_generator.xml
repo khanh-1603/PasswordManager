@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_surface">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topBarGen"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_shield"
+                app:tint="@color/primary_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Vault Logic"
+                android:textColor="@color/primary_blue"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBarGen"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <!-- Card 1: Generated Password Output Box -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/outline_variant"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="GENERATED PASSWORD"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:letterSpacing="0.05" />
+
+                        <ImageView
+                            android:id="@+id/btnCopyGenerated"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_content_copy"
+                            app:tint="@color/primary_blue" />
+                    </LinearLayout>
+
+                    <!-- Monospace Password Display -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_password_box"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp">
+
+                        <TextView
+                            android:id="@+id/tvGeneratedPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="aB3$kL9#mP2@xY5*"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:letterSpacing="0.08" />
+
+                        <ImageView
+                            android:id="@+id/btnRefreshPassword"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="6dp"
+                            android:src="@drawable/ic_autorenew"
+                            app:tint="@color/text_secondary" />
+                    </LinearLayout>
+
+                    <!-- Strength Indicator -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/strengthBar1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/bg_strength_active_emerald" />
+
+                        <View
+                            android:id="@+id/strengthBar2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/bg_strength_active_emerald" />
+
+                        <View
+                            android:id="@+id/strengthBar3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/bg_strength_active_emerald" />
+
+                        <View
+                            android:id="@+id/strengthBar4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_strength_inactive" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvStrengthText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="4dp"
+                        android:text="Strong"
+                        android:textColor="@color/secondary_green"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Password Options (Length + Character sets) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/outline_variant"
+                app:cardBackgroundColor="@color/surface_card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Length Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Password Length"
+                            android:textColor="@color/text_primary"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-medium" />
+
+                        <TextView
+                            android:id="@+id/tvLengthBadge"
+                            android:layout_width="42dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/bg_badge_primary"
+                            android:gravity="center"
+                            android:text="16"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-medium"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Slider -->
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderLength"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:value="16"
+                        android:valueFrom="8"
+                        android:valueTo="64"
+                        android:stepSize="1"
+                        app:thumbColor="@color/primary_blue"
+                        app:trackColorActive="@color/primary_blue"
+                        app:trackColorInactive="@color/outline_variant" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="8"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="64"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="16dp"
+                        android:background="@color/outline_variant" />
+
+                    <!-- Include Characters Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Include Characters"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbUppercase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="true"
+                        android:text="Uppercase Letters (A-Z)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        app:buttonTint="@color/primary_blue" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbNumbers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:checked="true"
+                        android:text="Numbers (0-9)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        app:buttonTint="@color/primary_blue" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbSymbols"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:checked="true"
+                        android:text="Special Characters (!@#$%)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        app:buttonTint="@color/primary_blue" />
+
+                    <!-- Generate Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGenerateAction"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Sinh mật khẩu ngẫu nhiên"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:fontFamily="sans-serif-medium"
+                        android:backgroundTint="@color/primary_blue"
+                        app:cornerRadius="26dp"
+                        app:iconGravity="textStart" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

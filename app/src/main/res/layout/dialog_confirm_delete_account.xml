@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet_rounded"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Warning Red Icon Badge -->
+    <FrameLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_icon_circle_primary"
+        android:backgroundTint="@color/error_container">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_delete_forever"
+            app:tint="@color/error_red" />
+    </FrameLayout>
+
+    <!-- Dialog Title -->
+    <TextView
+        android:id="@+id/tvDeleteDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Xác nhận xóa tài khoản?"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Irreversible Warning Text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
+        android:text="Tất cả dữ liệu mật khẩu, khóa mã hóa AES-256 và cấu hình bảo mật sẽ bị tiêu hủy vĩnh viễn ngay lập tức và KHÔNG THỂ khôi phục."
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
+
+    <!-- Prompt text instruction -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nhập lại mật khẩu để xác nhận"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif-medium" />
+
+    <!-- Confirmation input box -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilConfirmDeleteInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etConfirmDeleteInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Dialog Actions: Cancel & Delete Forever -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelDelete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="HỦY BỎ"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmDeleteForever"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="@color/error_red"
+            android:text="XÓA VĨNH VIỄN"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

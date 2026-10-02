@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base Application Theme (Material 3 Light) -->
+    <style name="Theme.VaultLogic" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary Brand Colors -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+
+        <!-- Secondary (Emerald Green for Safe Entropy) -->
+        <item name="colorSecondary">@color/secondary_green</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+
+        <!-- Surface & Background -->
+        <item name="android:colorBackground">@color/bg_surface</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/outline</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/bg_surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Custom Shapes -->
+    <style name="ShapeAppearance.VaultLogic.RoundedSquare" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Shape cắt tròn hoàn toàn 50% cho Avatar / Profile -->
+    <style name="ShapeAppearance.VaultLogic.Circle" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Alias tương thích cho project có tên PasswordManager -->
+    <style name="Theme.PasswordManager" parent="Theme.VaultLogic" />
+
+    <!-- Animation rỗng để UnlockActivity không có hiệu ứng chuyển cảnh -->
+    <style name="Animation.PasswordManager.NoAnim" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+    </style>
+
+    <!-- Theme trong suốt cho UnlockActivity: tránh "nhảy màn hình" khi hiện biometric -->
+    <style name="Theme.PasswordManager.Transparent" parent="Theme.VaultLogic">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/Animation.PasswordManager.NoAnim</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+</resources>

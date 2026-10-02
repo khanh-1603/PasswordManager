@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Nền xanh dịu mắt (#D8E2FF) tôn vinh tài khoản dùng gần đây -->
+    <solid android:color="@color/primary_blue_container" />
+</shape>
